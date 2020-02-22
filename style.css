@@ -73,20 +73,23 @@ section {
   right: 0;
   overflow: hidden;
 }
-#grid-floats .grid-item {
+.grid-item {
   position: relative;
   background: #ffffff;
-  float: left;
+
   padding: 1rem;
   margin-left: 0.5rem;
   height: 50vh;
   text-align: center;
   margin-bottom: 1rem;
   box-shadow: 3px 3px 5px var(--black-color);
-
   transition: all 0.5s ease-in;
 }
-#grid-floats .grid-item::after {
+#grid-floats .grid-item {
+  float: left;
+}
+
+.grid-item::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -98,17 +101,17 @@ section {
   transition: all 0.5s ease-in;
   transition-delay: 0.2s;
 }
-#grid-floats .grid-item:hover:after {
+.grid-item:hover:after {
   height: 70%;
 
   z-index: 3;
 }
 
-#grid-floats .grid-item:hover {
+.grid-item:hover {
   transform: scale(1.1);
   z-index: 1;
 }
-#grid-floats .grid-item:hover > p {
+.grid-item:hover > p {
   height: auto;
   min-height: 50%;
   opacity: 1;
@@ -116,7 +119,7 @@ section {
   z-index: 4;
 }
 
-#grid-floats .grid-item p {
+.grid-item p {
   position: absolute;
   top: 30%;
   padding: inherit;
@@ -187,4 +190,16 @@ section {
   #grid-floats .grid-item:nth-child(n + 2) > h3 {
     font-size: 0.8rem;
   }
+}
+#grid-flex {
+  display: flex;
+  flex-flow: row wrap;
+}
+#grid-flex .grid-item:nth-child(1) {
+  /* width: 48%; */
+  flex: 2 0 48%;
+}
+#grid-flex .grid-item:nth-child(n + 2) {
+  width: 24%;
+  flex: 0 24%;
 }

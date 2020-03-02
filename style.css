@@ -81,7 +81,7 @@ section {
   position: relative;
   background: #ffffff;
   overflow: hidden;
-  padding: 1rem;
+  padding: 10px;
   margin: 0.5rem;
   height: 50vh;
   max-height: 400px;
@@ -144,6 +144,7 @@ section {
   width: calc(25% - 1rem);
 }
 
+/*  A clear fix after the floats (source: css-tricks) */
 #grid-floats:after {
   content: "";
   display: table;
@@ -153,13 +154,14 @@ section {
 @media (max-width: 1023px) and (min-width: 600px) {
   .grid-item {
     height: 45vh;
+    margin: 5px;
   }
   #grid-floats .grid-item:nth-child(-n + 2) {
-    width: 48.3%;
+    width: calc(50% - 10px);
   }
   
   #grid-floats .grid-item:nth-child(n + 3) {
-    width: 31.7%;
+    width: calc(33.3% - 1rem);
   }
    .grid-item p {
     top: 45%;

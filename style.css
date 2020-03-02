@@ -20,13 +20,12 @@
 body {
   font-family: "Dosis", sans-serif;
   background: var(--secondary-color);
-  
-  
 }
 p[dir="rtl"] {
   font-family: "Tajawal", sans-serif;
   
 }
+  
 /* Making the images take a width of a 100% of its container and change it to a block */
 img {
   width: 100%;
@@ -36,16 +35,17 @@ img {
   margin: 1rem auto 0 auto;
   
 }
+/* Removed bullet points */
 ul {
   list-style: none;
 }
-
+/* Styled the header */
 header {
   background: var(--main-color);
-
   box-shadow: inset 0 -0.5px var(--main-trans);
 }
 
+/* Styled the Main title in the header */
 h1 {
   text-align: center;
   padding: 2rem 0;
@@ -53,6 +53,7 @@ h1 {
   color: var(--light-color);
   text-shadow: 3px 5px 10px var(--black-color);
 }
+/* Styled the subheader */
 h2 {
   text-align: left;
   margin: 0 0 1rem 1rem;
@@ -61,22 +62,19 @@ h2 {
   color: var(--black-color);
   text-shadow: 5px 5px 5px var(--main-trans);
 }
-  
-  
-  
+/* Styled the title of the drone */
 h3 {
   text-align: center;
-  z-index: 4;
   text-transform: uppercase;
 }
-
+/* Made the section a wrapper in the middle - so it does not span the whole screen */
 section {
   max-width: 1200px;
   margin: 1rem auto;
   overflow: hidden;
   padding: 1rem 2rem;
 }
-
+/* Style the card with the drone */
 .grid-item {
   position: relative;
   background: #ffffff;
@@ -90,10 +88,11 @@ section {
   box-shadow: 3px 3px 5px var(--black-color);
   transition: all 0.5s ease-in;
 }
+/* Floated the cards for the first grid only */
 #grid-floats .grid-item {
   float: left;
 }
-
+/* Made an overlay on which the text should appear */
 .grid-item::after {
   content: "";
   position: absolute;
@@ -102,28 +101,27 @@ section {
   width: 100%;
   height: 0%;
   background: var(--main-trans);
-
   transition: all 0.5s ease-in;
   transition-delay: 0.3s;
 }
+/* The hover of the overlay */
 .grid-item:hover:after {
   height: 60%;
-
-  z-index: 3;
+  /* z-index: 3; */
 }
-
+/* The hover of the card itself */
 .grid-item:hover {
   transform: scale(1.1);
   z-index: 1;
 }
+/* The hover of the text */
 .grid-item:hover > p {
-  
   transform: scaleX(1);
   opacity: 1;
-
-  z-index: 4;
+  z-index: 2;
 }
-
+  
+/* Styling & positioning the text */
 .grid-item p {
   position: absolute;
   top: 40%;
@@ -132,14 +130,14 @@ section {
   color: var(--light-color);
   text-align: center;
   transform: scaleX(0);
-  
   transition: transform 0.5s ease-in-out;
   transition-delay: 0.7s;
 }
-
+/* The width of the first element */
  .grid-item:nth-child(1) {
   width: calc(50% - 1rem);
 }
+/* The width of the rest of the elements - starting from 2 */
  .grid-item:nth-child(n + 2) {
   width: calc(25% - 1rem);
 }
@@ -150,88 +148,87 @@ section {
   display: table;
   clear: both;
 }
-
-@media (max-width: 1023px) and (min-width: 600px) {
-  .grid-item {
-    height: 45vh;
-    margin: 10px 5px;
-  }
-  .grid-item:nth-child(-n + 2) {
-    width: calc(50% - 10px);
-  }
-  
-  .grid-item:nth-child(n + 3) {
-    width: calc(33.3% - 10px);
-  }
-   .grid-item p {
-    top: 45%;
-  }
-   .grid-item:hover:after {
-    height: 55%;
-  }
-}
-@media (max-width: 600px) {
-  section {
-    padding: 1rem;
-  }
-  .grid-item {
-    margin: 5px;
-  }
-   .grid-item:nth-child(1) > p {
-    top: 65%;
-  }
-   .grid-item:nth-child(1):hover:after {
-    height: 35%;
-  }
-    .grid-item:nth-child(1) {
-    width: calc(100% - 10px);
-  }
-    
-  
-    .grid-item:nth-child(n + 2) {
-    width: calc(50% - 10px);
-  }
-  .grid-item p {
-    top: 6%;
-  }
-   .grid-item:hover:after {
-    height: 100%;
-  }
-  
-
-   
-   .grid-item:nth-child(n + 2) > p {
-    font-size: 0.8rem;
-  }
-   .grid-item:nth-child(n+2) {
-    height: 30vh;
-    padding: 0.5rem;
-  }
-
-   .grid-item:nth-child(n + 2) > h3 {
-    font-size: 0.8rem;
-  }
-}
-
-/* Added a height query just to adjust for phones in landscape mode (Can be removed */
-@media (max-height: 670px) {
-   .grid-item:nth-child(1) > p {
-    font-size: 0.8rem;
-
-  }
-   .grid-item:nth-child(n+2) > p {
-    font-size: 0.62rem;
-  }
-}
-
-
-
+/* ----------------------------------------------------------------------------- */
 /* The flex Grid */
-
-
-
 #grid-flex {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+}
+
+/* Media queries for tablets */
+@media (max-width: 1023px) and (min-width: 600px) {
+  /* Shrunk the height a bit and decreased the margin */
+  .grid-item {
+    height: 45vh;
+    margin: 10px 5px;
+  }
+  /* The width of the first two elements */
+  .grid-item:nth-child(-n + 2) {
+    width: calc(50% - 10px);
+  }
+  /* The width of the rest of the elements starting from third */
+  .grid-item:nth-child(n + 3) {
+    width: calc(33.3% - 10px);
+  }
+  /* Adjusted the position of the text & the overlay */
+    .grid-item p {
+    top: 45%;
+  }
+    .grid-item:hover:after {
+    height: 55%;
+  }
+}
+/* Media queries for phones */
+@media (max-width: 600px) {
+  /* Decreased the pading on the sides */
+  section {
+    padding: 1rem;
+  }
+  /* Decreased the margin */
+  .grid-item {
+    margin: 5px;
+  }
+  /* The position of the overlay & the text of the first element */
+  .grid-item:nth-child(1) > p {
+    top: 65%;
+  }
+  .grid-item:nth-child(1):hover:after {
+    height: 35%;
+  }
+  /* The position of the overlay & text of the rest of the elements so it covers the whole card to fit the text */
+  .grid-item p {
+    top: 6%;
+  }
+  .grid-item:hover:after {
+    height: 100%;
+  }
+  /* The width of the first element */
+  .grid-item:nth-child(1) {
+    width: calc(100% - 10px);
+  }
+  /* The width of the rest of the elements */
+  .grid-item:nth-child(n + 2) {
+    width: calc(50% - 10px);
+  }
+  /* Decreased the font size for elements starting from 2 */
+  .grid-item:nth-child(n + 2) > p, 
+  .grid-item:nth-child(n + 2) > h3 {
+  font-size: 0.8rem;
+  }
+  /* Decreased the height of the card & the padding for the elements starting from 2 */
+  .grid-item:nth-child(n+2) {
+  height: 30vh;
+  min-height: 180px;
+  padding: 0.5rem;
+  }
+}
+  
+
+/* Experimental - added a height query just to adjust for phones in landscape mode (Can be removed */
+@media (max-height: 670px) {
+    
+    .grid-item:nth-child(n+2) > p {
+    font-size: 0.8rem;
+  }
 }

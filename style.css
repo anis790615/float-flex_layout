@@ -137,10 +137,10 @@ section {
   transition-delay: 0.7s;
 }
 
-#grid-floats .grid-item:nth-child(1) {
+ .grid-item:nth-child(1) {
   width: calc(50% - 1rem);
 }
-#grid-floats .grid-item:nth-child(n + 2) {
+ .grid-item:nth-child(n + 2) {
   width: calc(25% - 1rem);
 }
 
@@ -154,13 +154,13 @@ section {
 @media (max-width: 1023px) and (min-width: 600px) {
   .grid-item {
     height: 45vh;
-    margin: 5px;
+    margin: 10px 5px;
   }
-  #grid-floats .grid-item:nth-child(-n + 2) {
+  .grid-item:nth-child(-n + 2) {
     width: calc(50% - 10px);
   }
   
-  #grid-floats .grid-item:nth-child(n + 3) {
+  .grid-item:nth-child(n + 3) {
     width: calc(33.3% - 10px);
   }
    .grid-item p {
@@ -183,12 +183,12 @@ section {
    .grid-item:nth-child(1):hover:after {
     height: 35%;
   }
-  #grid-floats .grid-item:nth-child(1) {
+    .grid-item:nth-child(1) {
     width: calc(100% - 10px);
   }
     
   
-   #grid-floats .grid-item:nth-child(n + 2) {
+    .grid-item:nth-child(n + 2) {
     width: calc(50% - 10px);
   }
   .grid-item p {
@@ -234,31 +234,4 @@ section {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-}
-#grid-flex .grid-item:nth-child(1) {
-  /* width: 48%; */
-  flex: 0 1 48.7%;
-}
-#grid-flex .grid-item:nth-child(n + 2) {
-  /* width: 24%; */
-  flex: 0 1 24%;
-  
-}
-
-@media (max-width: 1023px) and (min-width: 600px) {
-  #grid-flex .grid-item:nth-child(-n + 2) {
-    flex: 0 1 48.8%;
-  }
-  
-  #grid-flex .grid-item:nth-child(n + 3) {
-    flex: 0 1 32.1%;
-  }
-}
-@media (max-width: 600px) {
-  #grid-flex .grid-item:nth-child(1) {
-    flex: 0 1 99%;
-  }
-  #grid-flex .grid-item:nth-child(n+2) {
-    flex: 0 1 47.2%;
-  }
 }

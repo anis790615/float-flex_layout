@@ -6,4 +6,4 @@ Width:
 - Between 600px and 1023px - 3 columns with the first two items spanning the full width.
 - 600px and less - 2 columns wuth the first item spanning the whole width.
 The end result can be seen at https://anis790615.github.io/float-flex_layout/.
-It is still a work in progress.
+The first version had manual widths, which resulted in items not being aligned perfectly. Redone it with calc and tested it in a new branch. Now everything works fine.

@@ -182,10 +182,8 @@ section {
 
 /* Media queries for phones */
 @media (max-width: 600px) {
-  /* Decreased the pading on the sides */
-  section {
-    padding: 1rem;
-  }
+  
+  
   /* Decreased the margin */
   .grid-item:nth-child(n) {
     /* margin: 5px; */
@@ -194,7 +192,7 @@ section {
   }
   /* The position of the overlay & the text of the first element */
   .grid-item > p {
-    top: 35%;
+    top: 30%;
   }
   .grid-item:hover:after {
     height: 100%;

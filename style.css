@@ -4,7 +4,7 @@
 /* Setting the variables for the colors */
 :root {
   --main-color: #65a9d2;
-  --main-trans: rgba(06, 81, 126, 0.7);
+  --main-trans: rgba(06, 81, 126, 0.65);
   
   --secondary-color: #b5daf0;
   --light-color: #eaf0ff;
@@ -179,6 +179,7 @@ section {
     height: 55%;
   }
 }
+
 /* Media queries for phones */
 @media (max-width: 600px) {
   /* Decreased the pading on the sides */
@@ -186,49 +187,54 @@ section {
     padding: 1rem;
   }
   /* Decreased the margin */
-  .grid-item {
-    margin: 5px;
+  .grid-item:nth-child(n) {
+    /* margin: 5px; */
+    width: calc(100% - 1rem);
+    height: 40vh;
   }
   /* The position of the overlay & the text of the first element */
-  .grid-item:nth-child(1) > p {
-    top: 65%;
-  }
-  .grid-item:nth-child(1):hover:after {
-    height: 35%;
-  }
-  /* The position of the overlay & text of the rest of the elements so it covers the whole card to fit the text */
-  .grid-item p {
-    top: 6%;
+  .grid-item > p {
+    top: 35%;
   }
   .grid-item:hover:after {
     height: 100%;
   }
+  /* Decreased the font size*/
+  .grid-item:nth-child(n) > p {
+  font-size: 0.9rem;
+  }
+  
+  /* The position of the overlay & text of the rest of the elements so it covers the whole card to fit the text */
+  /* .grid-item p {
+    top: 6%;
+  } */
+  /* .grid-item:hover:after {
+    height: 100%;
+  } */
   /* The width of the first element */
-  .grid-item:nth-child(1) {
+  /* .grid-item:nth-child(1) {
     width: calc(100% - 10px);
-  }
+  } */
   /* The width of the rest of the elements */
-  .grid-item:nth-child(n + 2) {
+  /* .grid-item:nth-child(n + 2) {
     width: calc(50% - 10px);
-  }
-  /* Decreased the font size for elements starting from 2 */
-  .grid-item:nth-child(n + 2) > p, 
-  .grid-item:nth-child(n + 2) > h3 {
-  font-size: 0.8rem;
-  }
+  } */
   /* Decreased the height of the card & the padding for the elements starting from 2 */
-  .grid-item:nth-child(n+2) {
+  /* .grid-item:nth-child(n+2) {
   height: 30vh;
   min-height: 180px;
   padding: 0.5rem;
-  }
-}
+  } */
+} 
   
 
-/* Experimental - added a height query just to adjust for phones in landscape mode (Can be removed */
-@media (max-height: 670px) {
-    
-    .grid-item:nth-child(n+2) > p {
-    font-size: 0.8rem;
+/* Experimental - added a landscape query just to adjust for phones in landscape mode (Can be removed */
+@media (max-height: 600px) and (orientation: landscape){
+  .grid-item:nth-child(n) {
+
+    height: 60vh;
   }
-}
+    .grid-item:nth-child(n) > p {
+    font-size: 0.7rem;
+  }
+} 

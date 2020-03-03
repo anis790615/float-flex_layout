@@ -182,7 +182,18 @@ section {
 
 /* Media queries for phones */
 @media (max-width: 600px) {
-  
+  h1 {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 3.5rem;
+  }
+  h2 {
+    text-align: center;
+    
+    font-size: 2rem;
+    
+  }
+    
   
   /* Decreased the margin */
   .grid-item:nth-child(n) {
@@ -192,7 +203,7 @@ section {
   }
   /* The position of the overlay & the text of the first element */
   .grid-item > p {
-    top: 30%;
+    top: 25%;
   }
   .grid-item:hover:after {
     height: 100%;

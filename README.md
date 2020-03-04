@@ -7,3 +7,5 @@ Width:
 - 600px and less - 1 column.
 The end result can be seen at https://anis790615.github.io/float-flex_layout/.
 The first version had manual widths, which resulted in items not being aligned perfectly. Redone it with calc and tested it in a new branch. Now everything works fine.
+
+The testing branch contains another shadow effect and hover effect, but unfortunately the pages allow only one source from a repository to be seen, so the url ablve links to the master branch, the effct in the testing branch can be tried individually.

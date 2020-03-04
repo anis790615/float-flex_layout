@@ -7,3 +7,7 @@ Width:
 - 600px and less - 1 column.
 The end result can be seen at https://anis790615.github.io/float-flex_layout/.
 The first version had manual widths, which resulted in items not being aligned perfectly. Redone it with calc and tested it in a new branch. Now everything works fine.
+// Testing Branch
+
+The shadow effect is different and more subtle on the card, with the effect of the card being lift up on hover.  
+The effect is taken from a pen at the link (https://codepen.io/wisnust10/pen/NNpjPE)
